@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Here is a Healthy Food web.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-image: url("Healthy-foods.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: "Times New Roman", serif;
+        }
+
+        .navbar {
+            background-color: #cc99ff;
+            padding: 12px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: #9933ff;
+        }
+
+        .main-title {
+            color: #9933ff;
+            font-size: 42px;
+            margin-top: 40px;
+            text-align: right;
+            margin-right: 100px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: #e6ccff;
+            font-size: 28px;
+            margin-right: 278px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: auto;
+            margin: 30px 100px 30px 1265px;
+            padding: 0;
+        }
+
+        .home-buttons input {
+            color: black;
+            font-size: 20px;
+            background-color: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+                background-position: center;
+            }
+
+            .navbar {
+                padding: 10px 8px;
+            }
+
+            .navbar ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            .navbar li {
+                display: block;
+                margin: 0;
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 14px;
+                padding: 8px 9px;
+            }
+
+            header {
+                padding-top: 100px;
+            }
+
+            header br {
+                display: none;
+            }
+
+            .main-title {
+                font-size: clamp(25px, 7vw, 34px);
+                margin: 35px 12px 18px;
+                text-align: center;
+            }
+
+            .subtitle {
+                font-size: 24px;
+                margin: 0 12px;
+                text-align: center;
+            }
+
+            .home-buttons {
+                gap: 14px;
+                margin-top: 35px;
+            }
+
+            .home-buttons input {
+                font-size: 17px;
+                padding: 10px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body alink="#f0f8ff" link="black" vlink="black">
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="register.html">REGISTER</a></li>
+                <li><a href="video.html">VIDEO</a></li>
+                <li><a href="contact us.html">CONTACT US</a></li>
+                <li><a href="about us.html">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </header>
+
+    <main>
+        <h1 class="main-title">WELCOME TO MY WEBSITE</h1>
+        <h2 class="subtitle" dir="rtl">Healthy Lifestyle</h2>
+
+        <div class="home-buttons">
+            <input
+                type="button"
+                value="Login"
+                onclick="window.location.href='login.html'"
+                dir="rtl">
+
+            <input
+                type="button"
+                value="Register"
+                dir="rtl"
+                onclick="alert('Thanks for your registration')">
+        </div>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
