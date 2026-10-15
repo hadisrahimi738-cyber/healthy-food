@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Healthy Food</title>
+
+    <style>
+        .navbar {
+            background-color: #cc99ff;
+            padding: 12px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15)
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: #9933ff;
+        }
+
+        .register-box {
+            background-color: #C88FFA;
+            width: 350px;
+            max-width: calc(100% - 60px);
+            margin: 120px 0 40px 1100px ;
+            padding: 25px;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        .register-box h1 {
+            text-align: center;
+        }
+
+        .register-box label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        .register-box input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+        }
+
+        .register-box button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #9933ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .register-box button:hover {
+            background-color: #7a20d1;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(Healthy-foods.png); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;" alink="#f0f8ff" link="black" vlink="black">
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="register.html">REGISTER</a></li>
+            <li><a href="video.html">VIDEO</a></li>
+            <li><a href="contact us.html">CONTACT US</a></li>
+            <li><a href="about us.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="register-box">
+            <h1>Create Account</h1>
+
+            <form id="registerForm">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname"
+                       placeholder="Enter your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Create a password"
+                       minlength="8" required>
+
+                <p id="passwordHint"> Password must be at least 8 characters. </p>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword"
+                       name="confirmPassword"
+                       placeholder="Enter your password again"
+                       minlength="8" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+            <p id="message" aria-live="polite"></p>
+        </div>
+    </main>
+    <script>
+        const registerForm = document.getElementById("registerForm");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+        const message = document.getElementById("message");
+        const passwordHint = document.getElementById("passwordHint");
+
+        function checkPasswords() {
+            if (password.value === "" || confirmPassword.value === "") {
+                message.textContent = "";
+                confirmPassword.style.border = "";
+            } else if (password.value === confirmPassword.value) {
+                message.textContent = "Passwords match!";
+                message.style.color = "green";
+                confirmPassword.style.border = "2px solid green";
+            } else {
+                message.textContent = "Passwords do not match!";
+                message.style.color = "red";
+                confirmPassword.style.border = "2px solid red";
+            }
+        }
+
+        password.addEventListener("input", function() {
+            if (password.value.length < 8) {
+                passwordHint.style.color = "red";
+            } else {
+                passwordHint.style.color = "green";
+            }
+
+            checkPasswords();
+        });
+
+        confirmPassword.addEventListener("input", checkPasswords);
+
+        registerForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (password.value !== confirmPassword.value) {
+                message.textContent = "Passwords do not match!";
+                message.style.color = "red";
+                confirmPassword.style.border = "2px solid red";
+            } else {
+                message.textContent = "Registration successful!";
+                message.style.color = "green";
+            }
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>

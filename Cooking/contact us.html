@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthy Food - Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact the Healthy Food website.">
+
+    <style>
+        .navbar {
+            background-color: #cc99ff;
+            padding: 12px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: #9933ff;
+        }
+
+        .content {
+            background-color: #C88FFA;
+            width: 45%;
+            margin-left: 50%;
+            margin-top: 25px;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        input[type=text],
+        input[type=email],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('Healthy-foods.png'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="register.html">REGISTER</a></li>
+                <li><a href="video.html">VIDEO</a></li>
+                <li><a href="contact us.html">CONTACT US</a></li>
+                <li><a href="about us.html">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <br><br><br><br>
+    </header>
+
+    <main>
+        <div class="content" dir="ltr">
+            <h2>Contact Us</h2>
+
+            <div class="container">
+                <form id="contactForm">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname"
+                           placeholder="Your name.." required>
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname"
+                           placeholder="Your last name.." required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Your email address.." required>
+
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="">Choose your country</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="azerbaijan">Azerbaijan</option>
+                        <option value="iran">Iran</option>
+                    </select>
+
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject"
+                              placeholder="Write something.."
+                              style="height:150px"
+                              required></textarea>
+
+                    <input type="submit" value="Send Message">
+
+                    <p id="message" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const message = document.getElementById("message");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            message.textContent = "Thank you! Your form has been checked successfully.";
+            message.style.color = "green";
+
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>

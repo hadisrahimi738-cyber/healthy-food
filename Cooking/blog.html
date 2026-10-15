@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title> Healthy Food </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Here is a Healthy Food web.">
+
+        <style>
+            .navbar {
+                background-color: #cc99ff;
+                padding: 12px 20px;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                box-sizing: border-box;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15)
+            }
+
+            .navbar ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navbar li {
+                display: inline-block;
+                margin-right: 15px;
+            }
+
+            .navbar a {
+                color: black;
+                text-decoration: none;
+                font-size: 20px;
+                padding: 8px 14px;
+                border-radius: 8px;
+                transition: 0.3s;
+            }
+
+            .navbar a:hover {
+                background-color: white;
+                color: #9933ff;
+            }
+
+            .details-btn,
+            .favorite-btn,
+            #clearFilters {
+                display: block;
+                margin: 10px auto 20px;
+                padding: 8px 18px;
+                border: none;
+                border-radius: 8px;
+                background-color: white;
+                color: black;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .recipe-details {
+                display: none;
+            }
+
+            .favorite-btn {
+                margin-bottom: 10px;
+            }
+
+            .favorite-btn.active {
+                background-color: #9933ff;
+                color: white;
+            }
+
+            #resultCount {
+                text-align: center;
+                margin: 10px;
+            }
+        </style>
+    </head>
+
+    <body style="background-image: url(Healthy-foods.png); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"
+          alink="#f0f8ff" link="black" vlink="black">
+
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="register.html">REGISTER</a></li>
+                    <li><a href="video.html">VIDEO</a></li>
+                    <li><a href="contact us.html">CONTACT US</a></li>
+                    <li><a href="about us.html">ABOUT US</a></li>
+                </ul>
+            </nav>
+
+            <br><br><br><br>
+        </header>
+
+        <main>
+
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <div dir="ltr"
+                 style="background-color:#C88FFA; width:45%; margin-left:850px; opacity:0.8; padding:50px 20px; box-sizing:border-box;">
+
+                <!-- Search -->
+                <div style="text-align:center; margin-bottom:20px;">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search recipes..."
+                        style="padding:10px; font-size:16px; border-radius:8px; border:1px solid #ccc;"
+                    >
+                </div>
+
+                <!-- Category -->
+                <div style="text-align:center; margin-bottom:20px;">
+                    <select
+                        id="categoryFilter"
+                        style="padding:10px; font-size:16px; border-radius:8px;">
+
+                        <option value="all">All Recipes</option>
+                        <option value="main">Main Dish</option>
+                        <option value="salad">Salad</option>
+                        <option value="drink">Drink</option>
+
+                    </select>
+                </div>
+                <!-- Clear button -->
+                <button id="clearFilters">
+                    Clear Filters
+                </button>
+
+                <!-- Result count -->
+                <p id="resultCount">
+                    3 recipes found
+                </p>
+
+                <!-- No result -->
+                <p id="noResult" style="text-align:center; display:none;">
+                    No recipe found.
+                </p>
+
+
+                <section class="recipes">
+
+                    <!-- Pasta -->
+                    <div class="recipe" data-category="main">
+
+                        <h2 style="text-align: center;">
+                            Pasta
+                        </h2>
+
+                        <button class="favorite-btn">
+                            ☆ Favorite
+                        </button>
+
+                        <button class="details-btn">
+                            Read More
+                        </button>
+
+                        <div class="recipe-details">
+
+                            <img
+                                src="Pasta.webp"
+                                alt="Pasta"
+                                style="width:250px; padding:10px; display:block; margin-right:auto; margin-left:auto;"
+                            >
+
+                            <table style="margin-right:auto; margin-left:auto;">
+
+                                <tr>
+                                    <th>Ingredients</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Olive oil – 2 tbsp</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Garlic – 2 cloves, minced</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cherry tomatoes – 1 cup, halved</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Salt – to taste</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Black pepper – to taste</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Parmesan cheese – for topping</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Fresh basil – few leaves</td>
+                                </tr>
+
+                            </table>
+
+                            <br>
+
+                            <p style="padding:20px;">
+                                <b>Instructions:</b>
+                                <br>
+
+                                Boil pasta until al dente.
+                                Sauté garlic in olive oil, add tomatoes and cook a few minutes.
+                                Toss pasta with sauce, season with salt and pepper,
+                                then top with Parmesan and basil before serving.
+                                Enjoy your meal!
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Chicken Salad -->
+                    <div class="recipe" data-category="salad">
+
+                        <h2 style="text-align:center;">
+                            Chicken Salad
+                        </h2>
+
+                        <button class="favorite-btn">
+                            ☆ Favorite
+                        </button>
+
+                        <button class="details-btn">
+                            Read More
+                        </button>
+
+                        <div class="recipe-details">
+
+                            <img
+                                src="Chicken-Salad.webp"
+                                alt="Chicken Salad"
+                                style="width:250px; padding:10px; display:block; margin-right:auto; margin-left:auto;"
+                            >
+                            <table style="margin-right:auto; margin-left:auto;">
+
+                                <tr>
+                                    <th>Ingredients</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Chicken breast – 1 piece</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lettuce – 2 cups</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Tomato – 1</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cucumber – 1</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Olive oil – 1 tbsp</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Salt – to taste</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Black pepper – to taste</td>
+                                </tr>
+
+                            </table>
+
+                            <p style="padding:20px;">
+                                <b>Instructions:</b>
+                                <br>
+
+                                Cook the chicken and cut it into small pieces.
+                                Mix the chicken with lettuce, tomato and cucumber.
+                                Add olive oil, salt and black pepper.
+                                Mix well and enjoy your salad!
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Fruit Smoothie -->
+                    <div class="recipe" data-category="drink">
+
+                        <h2 style="text-align:center;">
+                            Fruit Smoothie
+                        </h2>
+
+                        <button class="favorite-btn">
+                            ☆ Favorite
+                        </button>
+
+                        <button class="details-btn">
+                            Read More
+                        </button>
+
+                        <div class="recipe-details">
+
+                            <img
+                                src="Fruit-Smoothie.jpg"
+                                alt="Fruit Smoothie"
+                                style="width:250px; padding:10px; display:block; margin-right:auto; margin-left:auto;"
+                            >
+
+                            <table style="margin-right:auto; margin-left:auto;">
+
+                                <tr>
+                                    <th>Ingredients</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Banana – 1</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Strawberries – 1 cup</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Milk – 1 cup</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Honey – 1 tbsp</td>
+                                </tr>
+
+                            </table>
+
+                            <br>
+
+                            <p style="padding:20px;">
+                                <b>Instructions:</b>
+                                <br>
+
+                                Add all the ingredients to a blender.
+                                Blend until smooth and creamy.
+                                Pour into a glass and enjoy!
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+
+        <footer>
+        </footer>
+
+
+        <script>
+            const searchInput = document.getElementById("searchInput");
+            const categoryFilter = document.getElementById("categoryFilter");
+            const clearFilters = document.getElementById("clearFilters");
+            const recipes = document.querySelectorAll(".recipe");
+            const noResult = document.getElementById("noResult");
+            const resultCount = document.getElementById("resultCount");
+
+
+            // SEARCH + CATEGORY
+            function filterRecipes() {
+
+                const searchText = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+
+                let found = 0;
+
+                recipes.forEach(function(recipe) {
+
+                    const recipeText = recipe.textContent.toLowerCase();
+                    const recipeCategory = recipe.dataset.category;
+
+                    const matchesSearch = recipeText.includes(searchText);
+
+                    const matchesCategory =
+                        selectedCategory === "all" ||
+                        recipeCategory === selectedCategory;
+
+                    if (matchesSearch && matchesCategory) {
+
+                        recipe.style.display = "";
+                        found++;
+
+                    } else {
+
+                        recipe.style.display = "none";
+
+                    }
+                });
+
+
+                resultCount.textContent = found + " recipes found";
+
+
+                if (found > 0) {
+                    noResult.style.display = "none";
+                } else {
+                    noResult.style.display = "block";
+                }
+            }
+
+
+            searchInput.addEventListener("input", filterRecipes);
+
+            categoryFilter.addEventListener("change", filterRecipes);
+
+
+            // CLEAR FILTERS
+            clearFilters.addEventListener("click", function() {
+
+                searchInput.value = "";
+                categoryFilter.value = "all";
+
+                filterRecipes();
+
+            });
+
+
+            // READ MORE
+            const detailButtons = document.querySelectorAll(".details-btn");
+
+            detailButtons.forEach(function(button) {
+
+                button.addEventListener("click", function() {
+
+                    const details = button.nextElementSibling;
+
+                    if (details.style.display === "none" ||
+                        details.style.display === "") {
+
+                        details.style.display = "block";
+                        button.textContent = "Show Less";
+
+                    } else {
+
+                        details.style.display = "none";
+                        button.textContent = "Read More";
+
+                    }
+
+                });
+
+            });
+
+
+            // FAVORITES
+            const favoriteButtons =
+                document.querySelectorAll(".favorite-btn");
+
+            favoriteButtons.forEach(function(button) {
+
+                const recipe = button.closest(".recipe");
+
+                const recipeName =
+                    recipe.querySelector("h2").textContent.trim();
+
+
+                if (localStorage.getItem(recipeName) === "favorite") {
+
+                    button.classList.add("active");
+                    button.textContent = "★ Favorite";
+
+                }
+
+
+                button.addEventListener("click", function() {
+
+                    if (button.classList.contains("active")) {
+
+                        button.classList.remove("active");
+                        button.textContent = "☆ Favorite";
+
+                        localStorage.removeItem(recipeName);
+
+                    } else {
+
+                        button.classList.add("active");
+                        button.textContent = "★ Favorite";
+
+                        localStorage.setItem(recipeName, "favorite");
+
+                    }
+
+                });
+
+            });
+
+
+            // FIRST LOAD
+            filterRecipes();
+
+            </script>
+
+    </body>
+</html>
